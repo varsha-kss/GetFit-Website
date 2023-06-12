@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cardio</title>
+    <link rel="stylesheet" href="stylep.css">
+    <style>
+        img{
+            position: fixed;
+        }
+    </style>
+    <!-- <style>
+        body{
+            background-color: #b9c9cc;
+        }
+        img.source{
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            width: 80vw;
+            height: 47vw;
+        }
+
+
+        img{
+
+            height: 38vw;
+            width: 56vw;
+            overflow: none;
+            position: fixed;
+            top: 14%;
+            left: 21%;
+
+        
+        }
+        .imgs{
+        /* border: 2px solid red; */
+        display:flex;
+            justify-content: center;
+            align-items: center;
+            left:6vw;
+            top:4vw;
+        }
+        img{
+            overflow:none;
+        }
+    </style> -->
+
+</head>
+<body>
+    <div class="imgs">
+        <img src=" images/cardio-mountain-climbers.webp" alt="" id="images">
+    </div>
+    <script>
+        let img = document.querySelector('img');
+        let btn1 = document.querySelector('.btn');
+        // btn1.addEventListener('click', () => {
+        img.style="height=10vw; width=80vw;"
+        
+        let c=1;
+        setInterval(function(){
+            if(c==1){
+                img.src='images/cardio-mountain-climbers.webp' ;
+                // img.style="height =:10vw; width:90vw ;"
+                c=2;
+            }
+            else if(c==2){
+                img.src='images/cardio-burpees.webp';
+                c=3;
+            }
+            else if(c==3){
+                img.src='images/cardio-butt-kicks.webp';
+                c=4;
+            }
+            else if(c==4){
+                img.src='images/cardio-Inchworm crawl.webp';
+                c=5;
+            }
+            else if(c==5){
+                img.src='images/cardio-plank-ski-hops.webp';
+                c=6;
+            }
+            else if(c==6){
+                img.src='images/cardio-rotational-jacks.webp';
+                c=7;
+            }
+            else if(c==7){
+                img.src='images/cardio-squat-jumps.webp';
+                c=8;
+            }
+            else {
+                img.src='images/cardio-standing-oblique-crunch.webp';
+                c=9;
+            }
+            
+        },4000)
+    // })
+    </script>
+</body>
+</html>

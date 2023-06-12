@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>GetFit</title>
+<link rel="stylesheet" href="stylesignup.css">
+</head>
+
+<body>
+  
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    <input type="text" id="username" name="username" placeholder="Username" />
+    <input type="text" id="email" name="email" placeholder="E-mail" />
+    <input type="password" id="password" name="password" placeholder="Password" />
+    
+    <input type="submit" id='signUp' name="signup_submit" value="Sign up" />
+
+
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button onclick=window.location.href="login.html" class="social-signin facebook">Already a Member?</button>
+    
+    <button class="social-signin google" id="login1">Log in with Google</button>
+  </div>
+  <div class="or">OR</div>
+</div>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+  import { getDatabase,set,ref,update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+
+  import { getAuth, createUserWithEmailAndPassword ,signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBz9FrxerQjsgpJpryklUyH4dnjKYO5ojo",
+    authDomain: "getfit-a737d.firebaseapp.com",
+    databaseURL: "https://getfit-a737d-default-rtdb.firebaseio.com",
+    projectId: "getfit-a737d",
+    storageBucket: "getfit-a737d.appspot.com",
+    messagingSenderId: "372473961434",
+    appId: "1:372473961434:web:000e560aa449e2af75fee3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider(app);
+  //
+  login1.addEventListener('click',(e)=>{
+    signInWithRedirect(auth, provider);
+    getRedirectResult(auth)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access Google APIs.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+
+    // The signed-in user info.
+    const user = result.user;
+    //window.location.href = 'login.html'
+  
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
+
+
+  });
+
+  signUp.addEventListener('click',(e) => {
+
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var username = document.getElementById('username').value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    set(ref(database, 'users/' + user.uid), {
+    username: username,
+    email: email
+     });
+
+
+    alert('user created!')
+    //window.location.href = 'login.html'
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('invalid credentials!')
+    // ..
+  });
+
+});
+
+ 
+
+</script>
+
+</html>

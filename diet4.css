@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: radial-gradient(circle 964.7px at 10% 20%, rgba(0, 0, 0, 1) 0%, rgba(46, 52, 79, 1) 44%, rgb(29, 25, 25) 100.1%);
+
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation menu styles */
+nav {
+    background-color: #555;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 1.5vw;
+    
+}
+
+/* Main content styles */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 34px;
+    margin: 21px;
+    font-size: 1.5vw;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #ddd;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+}
+.disp{
+    display: flex;
+    
+}
+#Seaf{
+    margin: 3vw;
+    padding: 3vw;
+    height: 13vw;
+    border: 2px solid black;
+    border-radius: 12vw;
+    width: 13vw;
+    background: #cff2ef;
+    background-image: url(dairyfood.jpg);
+    font-weight: bolder;
+}
+#vegetables{
+    margin: 3vw;
+    margin-left: 4vw;
+    padding: 3vw;
+    height: 13vw;
+    border: 2px solid black;
+    border-radius: 12vw;
+    width: 13vw;
+    background: #cff2ef;
+    background-image: url(dairyfood.jpg);
+    font-weight: bolder;
+}
+#fruit{
+    margin: 2vw;
+    padding: 3vw;
+    height: 13vw;
+    border: 2px solid black;
+    border-radius: 12vw;
+    width: 13vw;
+    background: #cff2ef;
+    background-image: url(dairyfood.jpg);
+    font-weight: bolder;
+}
+#beans{
+    margin: 3vw;
+    padding: 3vw;
+    height: 13vw;
+    border: 2px solid black;
+    border-radius: 12vw;
+    width: 13vw;
+    background: #cff2ef;
+    background-image: url(dairyfood.jpg);
+    font-weight: bolder;
+}

@@ -1,0 +1,203 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="//fonts.googleapis.com/css?family=Roboto|Open+Sans:200,300,400,700,800,900&amp;subset=latin" rel="preload" as="font">
+  <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-T7WWB0T53W&amp;l=dataLayer&amp;cx=c"></script>
+  <script type="text/javascript" integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"></script>
+  <script src="https://connect.facebook.net/signals/config/251025992170426?v=2.9.102&amp;r=stable" async=""></script>
+  <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .dialog-wrapper {
+        display: none !important;
+    }
+
+    .wrap,
+    #main {
+        height: 100vh;
+        margin: 0 !important;
+    }
+
+    iframe {
+        display: none;
+    }
+
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .page-preview {
+        border-radius: 0;
+        height: 100%;
+    }
+
+    .page-preview-header {
+        background: #f2f2f2;
+        border: none;
+        height: 70px;
+        position: relative;
+        text-align: center;
+    }
+
+    .page-preview-header > a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 4px;
+    }
+
+    .page-preview-header > a:hover {
+        background: #e2f0fc;
+        text-decoration: none;
+    }
+
+    .page-preview-header > a.active {
+        background: #c9e4f9;
+    }
+
+    .page-preview-header > .close {
+        float: right;
+        margin-right: 10px;
+    }
+
+    .page-preview-body {
+        height: calc(100% - 70px);
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .page-preview-body iframe {
+        border: none;
+        display: inline-block;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+  <section class="u-align-center u-clearfix u-palette-2-base u-section-5" id="carousel_65fb">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <h2 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1"> Top tips from the experts</h2>
+      <div class="u-expanded-width u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-1"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-2"> Base your meals on higher fibre starchy carbohydrates</h5>
+              <p class="u-text u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-2"><span class="u-file-icon u-icon u-text-white u-icon-2"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-4"> Eat lots of fruit and veg</h5>
+              <p class="u-text u-text-5">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-text-white u-icon-3"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-6"> Eat more fish, including a portion of oily fish</h5>
+              <p class="u-text u-text-7">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-4"><span class="u-file-icon u-icon u-text-white u-icon-4"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-8"> Cut down on saturated fat and sugar</h5>
+              <p class="u-text u-text-9">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-5"><span class="u-file-icon u-icon u-text-white u-icon-5"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-10"> Eat less salt: no more than 6g a day for adults</h5>
+              <p class="u-text u-text-11">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+          <div class="u-align-left u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-6"><span class="u-file-icon u-icon u-text-white u-icon-6"><img src="data:image/png;base64,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" alt=""></span>
+              <h5 class="u-custom-font u-font-montserrat u-text u-text-12"> Get active and be a healthy weight</h5>
+              <p class="u-text u-text-13">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diet Chart</title>
+	<link rel="stylesheet" href="stylediet.css">
+</head>
+<body>
+	<h1>Diet Chart</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Meal</th>
+				<th>Food Item</th>
+				<th>Calories</th>
+				<th>Protein (g)</th>
+				<th>Carbs (g)</th>
+				<th>Fat (g)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Breakfast</td>
+				<td>12 Eggs, Scrambled</td>
+				<td>156</td>
+				<td>12.6</td>
+				<td>1.2</td>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td>Snack 1</td>
+				<td>1 Apple</td>
+				<td>95</td>
+				<td>0.5</td>
+				<td>25</td>
+				<td>0.3</td>
+			</tr>
+			<tr>
+				<td>Lunch</td>
+				<td>Grilled Chicken Breast</td>
+				<td>165</td>
+				<td>31</td>
+				<td>0</td>
+				<td>3.6</td>
+			</tr>
+			<tr>
+				<td>Snack 2</td>
+				<td>Carrots and Hummus</td>
+				<td>160</td>
+				<td>3</td>
+				<td>16</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>Dinner</td>
+				<td>Salmon with Brown Rice and Broccoli</td>
+				<td>481</td>
+				<td>30</td>
+				<td>47</td>
+				<td>16</td>
+			</tr>
+			<tr>
+				<td>Total</td>
+				<td></td>
+				<td>1057</td>
+				<td>77.1</td>
+				<td>89.2</td>
+				<td>41.9</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script src="scripts.js"></script>
+</body>
+</html>
